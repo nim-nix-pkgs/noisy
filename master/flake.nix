@@ -11,6 +11,7 @@
   inputs.src-noisy-master.ref   = "refs/heads/master";
   inputs.src-noisy-master.owner = "guzba";
   inputs.src-noisy-master.repo  = "noisy";
+  inputs.src-noisy-master.dir   = "";
   inputs.src-noisy-master.type  = "github";
   
   inputs."nimsimd".owner = "nim-nix-pkgs";

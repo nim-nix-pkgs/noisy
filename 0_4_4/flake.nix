@@ -11,6 +11,7 @@
   inputs.src-noisy-0_4_4.ref   = "refs/tags/0.4.4";
   inputs.src-noisy-0_4_4.owner = "guzba";
   inputs.src-noisy-0_4_4.repo  = "noisy";
+  inputs.src-noisy-0_4_4.dir   = "";
   inputs.src-noisy-0_4_4.type  = "github";
   
   inputs."nimsimd".owner = "nim-nix-pkgs";
