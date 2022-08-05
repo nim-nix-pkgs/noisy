@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-noisy-0_4_3.flake = false;
-  inputs.src-noisy-0_4_3.ref   = "refs/tags/0.4.3";
-  inputs.src-noisy-0_4_3.owner = "guzba";
-  inputs.src-noisy-0_4_3.repo  = "noisy";
-  inputs.src-noisy-0_4_3.type  = "github";
+  inputs.src-noisy-0_4_5.flake = false;
+  inputs.src-noisy-0_4_5.ref   = "refs/tags/0.4.5";
+  inputs.src-noisy-0_4_5.owner = "guzba";
+  inputs.src-noisy-0_4_5.repo  = "noisy";
+  inputs.src-noisy-0_4_5.type  = "github";
   
   inputs."nimsimd".owner = "nim-nix-pkgs";
   inputs."nimsimd".ref   = "master";
@@ -24,13 +24,13 @@
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-noisy-0_4_3"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-noisy-0_4_5"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-noisy-0_4_3";
+    src  = deps."src-noisy-0_4_5";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
